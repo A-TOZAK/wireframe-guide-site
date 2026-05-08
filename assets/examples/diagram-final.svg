@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">図解完成例</title>
+  <desc id="desc">AIっぽく見せないための図解設計ポイントを示す完成図解。</desc>
+  <rect width="1200" height="760" fill="#f8f6ef"/>
+  <text x="80" y="112" fill="#1c2730" font-family="sans-serif" font-size="44" font-weight="800">AIっぽく見せない図解の作り方</text>
+  <text x="82" y="154" fill="#52616d" font-family="sans-serif" font-size="23">構造だけでなく、素材感・余白・言葉の具体性まで設計する</text>
+  <circle cx="600" cy="392" r="112" fill="#244b61"/>
+  <text x="530" y="382" fill="#fff" font-family="sans-serif" font-size="30" font-weight="800">人間の</text>
+  <text x="512" y="424" fill="#fff" font-family="sans-serif" font-size="30" font-weight="800">編集判断</text>
+  <g font-family="sans-serif">
+    <g transform="translate(132 234)"><rect width="282" height="112" rx="18" fill="#e7f0ec"/><text x="24" y="46" fill="#1c2730" font-size="25" font-weight="800">具体的な相手</text><text x="24" y="78" fill="#52616d" font-size="19">誰に向けた図かを絞る</text></g>
+    <g transform="translate(786 234)"><rect width="282" height="112" rx="18" fill="#edf2f6"/><text x="24" y="46" fill="#1c2730" font-size="25" font-weight="800">実物の制約</text><text x="24" y="78" fill="#52616d" font-size="19">紙面・画面・納期を入れる</text></g>
+    <g transform="translate(132 518)"><rect width="282" height="112" rx="18" fill="#f4eadf"/><text x="24" y="46" fill="#1c2730" font-size="25" font-weight="800">余白と密度</text><text x="24" y="78" fill="#52616d" font-size="19">全部を同じ大きさにしない</text></g>
+    <g transform="translate(786 518)"><rect width="282" height="112" rx="18" fill="#f5e4e8"/><text x="24" y="46" fill="#1c2730" font-size="25" font-weight="800">使う言葉</text><text x="24" y="78" fill="#52616d" font-size="19">抽象語より現場の言葉</text></g>
+  </g>
+  <g stroke="#8fa6b5" stroke-width="6" stroke-linecap="round"><path d="M432 292l70 50M768 292l-70 50M432 574l70-76M768 574l-70-76"/></g>
+</svg>

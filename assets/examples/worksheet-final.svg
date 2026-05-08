@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="794" height="1123" viewBox="0 0 794 1123" role="img" aria-labelledby="title desc">
+  <title id="title">プリント完成例</title>
+  <desc id="desc">社会科の資料読み取りプリント完成例。</desc>
+  <rect width="794" height="1123" fill="#f3f5f2"/>
+  <rect x="46" y="40" width="702" height="1043" fill="#fffdf8" stroke="#d8d2c4" stroke-width="3"/>
+  <text x="82" y="105" fill="#1c2730" font-family="sans-serif" font-size="34" font-weight="800">社会科 資料読み取りミニ</text>
+  <text x="82" y="146" fill="#2f6b4f" font-family="sans-serif" font-size="22" font-weight="700">今日の問い: 人口の変化から、地域の課題を見つけよう</text>
+  <rect x="82" y="180" width="586" height="64" rx="10" fill="#e7f0ec"/>
+  <text x="106" y="220" fill="#33404d" font-family="sans-serif" font-size="22">見る順番: 1. 数字を見る  2. 増減を見る  3. 理由を考える</text>
+  <g transform="translate(82 282)">
+    <rect width="280" height="230" rx="12" fill="#f1f5f7" stroke="#b6c5cf"/>
+    <text x="22" y="36" fill="#1c2730" font-family="sans-serif" font-size="20" font-weight="700">資料A 人口の推移</text>
+    <path d="M36 178L86 140L138 154L190 88L238 70" fill="none" stroke="#1d5f8f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <g stroke="#c8d2dc"><path d="M36 70v120M36 190h210"/><path d="M36 150h210M36 110h210"/></g>
+  </g>
+  <g transform="translate(388 282)">
+    <rect width="280" height="230" rx="12" fill="#f6efe2" stroke="#d8c39f"/>
+    <text x="22" y="36" fill="#1c2730" font-family="sans-serif" font-size="20" font-weight="700">資料B 年齢別の割合</text>
+    <circle cx="136" cy="126" r="66" fill="#2f6b4f"/>
+    <path d="M136 126L136 60A66 66 0 0 1 196 153Z" fill="#d79a45"/>
+    <path d="M136 126L196 153A66 66 0 0 1 96 179Z" fill="#9bb6c7"/>
+  </g>
+  <text x="82" y="570" fill="#1c2730" font-family="sans-serif" font-size="24" font-weight="800">考えよう</text>
+  <rect x="82" y="596" width="586" height="232" rx="10" fill="#fff" stroke="#c7d1da" stroke-width="2"/>
+  <g stroke="#e1e5e9" stroke-width="2"><path d="M108 652h532M108 708h532M108 764h532"/></g>
+  <text x="106" y="880" fill="#1c2730" font-family="sans-serif" font-size="24" font-weight="800">振り返り</text>
+  <rect x="82" y="904" width="586" height="120" rx="10" fill="#f7f9fb" stroke="#c7d1da" stroke-width="2"/>
+  <text x="106" y="946" fill="#65717d" font-family="sans-serif" font-size="20">今日わかったこと・次に調べたいこと</text>
+</svg>

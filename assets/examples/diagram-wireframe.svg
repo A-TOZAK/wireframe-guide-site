@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">図解のワイヤーフレーム</title>
+  <desc id="desc">中央テーマと周辺要素を示す図解ワイヤーフレーム。</desc>
+  <rect width="1200" height="760" fill="#f7f9fb"/>
+  <rect x="80" y="68" width="560" height="48" rx="8" fill="#d9e1e8"/>
+  <circle cx="600" cy="386" r="104" fill="#eef2f5" stroke="#b8c4cf" stroke-width="3" stroke-dasharray="12 10"/>
+  <rect x="150" y="236" width="250" height="94" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-width="3"/>
+  <rect x="800" y="236" width="250" height="94" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-width="3"/>
+  <rect x="150" y="510" width="250" height="94" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-width="3"/>
+  <rect x="800" y="510" width="250" height="94" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-width="3"/>
+  <g stroke="#b8c4cf" stroke-width="7" stroke-linecap="round"><path d="M410 286l92 56M790 286l-92 56M410 558l92-72M790 558l-92-72"/></g>
+</svg>

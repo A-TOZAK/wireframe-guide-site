@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="794" height="1123" viewBox="0 0 794 1123" role="img" aria-labelledby="title desc">
+  <title id="title">プリントのワイヤーフレーム</title>
+  <desc id="desc">タイトル、問い、資料、記入欄、振り返り欄を示すプリントワイヤーフレーム。</desc>
+  <rect width="794" height="1123" fill="#f7f9fb"/>
+  <rect x="46" y="40" width="702" height="1043" fill="#fff" stroke="#c8d2dc" stroke-width="3"/>
+  <rect x="82" y="76" width="420" height="42" rx="6" fill="#d9e1e8"/>
+  <rect x="82" y="144" width="586" height="74" rx="10" fill="#eef2f5" stroke="#b8c4cf" stroke-width="3"/>
+  <rect x="82" y="252" width="280" height="230" rx="10" fill="#eef2f5" stroke="#b8c4cf" stroke-dasharray="10 8" stroke-width="3"/>
+  <rect x="388" y="252" width="280" height="230" rx="10" fill="#eef2f5" stroke="#b8c4cf" stroke-dasharray="10 8" stroke-width="3"/>
+  <rect x="82" y="526" width="586" height="260" rx="10" fill="#fff" stroke="#b8c4cf" stroke-width="3"/>
+  <g stroke="#d5dde4" stroke-width="2">
+    <path d="M104 592h542M104 652h542M104 712h542"/>
+  </g>
+  <rect x="82" y="830" width="586" height="156" rx="10" fill="#f7f9fb" stroke="#b8c4cf" stroke-width="3"/>
+  <rect x="82" y="1014" width="240" height="24" rx="12" fill="#d9e1e8"/>
+</svg>

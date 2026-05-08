@@ -414,6 +414,162 @@
       gap: 14px;
     }
 
+    .library-map {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .library-chip {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: #fbfcfd;
+    }
+
+    .library-chip strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.98rem;
+    }
+
+    .example-gallery {
+      display: grid;
+      gap: 18px;
+    }
+
+    .example-pair {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: #fbfcfd;
+    }
+
+    .example-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .example-head h3 {
+      margin: 0 0 4px;
+    }
+
+    .example-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .asset-pair {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .asset-frame {
+      margin: 0;
+    }
+
+    .asset-frame figcaption {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .asset-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .generated-board {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      display: block;
+      background: #fff;
+    }
+
+    .rule-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .rule {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: #fbfcfd;
+    }
+
+    .rule strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .prompt-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcfd;
+      overflow: hidden;
+    }
+
+    .prompt-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #f1f5f7;
+    }
+
+    .prompt-head h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .copy-button {
+      border: 1px solid #b8c4cf;
+      background: #fff;
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .copy-button:hover,
+    .copy-button:focus {
+      border-color: var(--blue);
+      outline: none;
+    }
+
+    .prompt-card pre {
+      margin: 0;
+      border-radius: 0;
+      min-height: 260px;
+    }
+
     .mini-wire {
       display: grid;
       gap: 6px;
@@ -480,6 +636,9 @@
 
       .flow,
       .pattern-gallery,
+      .library-map,
+      .prompt-grid,
+      .rule-list,
       .grid.three {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -506,6 +665,10 @@
       .grid.two,
       .grid.three,
       .example,
+      .asset-pair,
+      .library-map,
+      .prompt-grid,
+      .rule-list,
       .pattern-gallery {
         grid-template-columns: 1fr;
       }
@@ -555,9 +718,12 @@
       <strong>目次</strong>
       <a href="#basic">基本</a>
       <a href="#process">作り方</a>
+      <a href="#library-map">媒体別の棚</a>
       <a href="#roles">職種別の使い方</a>
       <a href="#patterns">型の一覧</a>
       <a href="#examples">失敗例と成功例</a>
+      <a href="#gallery">実例ギャラリー</a>
+      <a href="#anti-ai">AIっぽさ回避</a>
       <a href="#preparation">下準備</a>
       <a href="#cautions">注意点</a>
       <a href="#human-ai">人間とAIの分担</a>
@@ -620,6 +786,48 @@
             <p>目的、視線、導線、状態、抜け漏れをチェックする。</p>
           </div>
         </div>
+        <h3>広告バナーの型</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>型</th><th>構成</th><th>向いている場面</th></tr></thead>
+            <tbody>
+              <tr><td>直球訴求</td><td>主文 + 商品/サービス + CTA</td><td>内容が明確で、短時間で判断してほしい広告</td></tr>
+              <tr><td>課題共感</td><td>困りごと + 解決策 + CTA</td><td>教育、業務改善、相談サービス</td></tr>
+              <tr><td>実績訴求</td><td>数字 + 根拠 + ベネフィット</td><td>導入実績、販売数、参加者数が強いとき</td></tr>
+              <tr><td>期限訴求</td><td>期限 + 特典 + 行動</td><td>セール、イベント、募集締切</td></tr>
+              <tr><td>比較訴求</td><td>Before / After + 変化</td><td>改善サービス、教材、AI活用例</td></tr>
+              <tr><td>文字組み訴求</td><td>強いコピー + 余白 + 小さな補足</td><td>世界観や言葉の強さで見せたいとき</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>スライドの型</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>型</th><th>構成</th><th>使いどころ</th></tr></thead>
+            <tbody>
+              <tr><td>結論先出し</td><td>結論 + 理由 + 次の行動</td><td>研修、提案、報告</td></tr>
+              <tr><td>3根拠</td><td>主張 + 根拠1/2/3</td><td>説得、説明、授業のまとめ</td></tr>
+              <tr><td>Before / After</td><td>課題の状態 + 改善後</td><td>業務改善、教材改善、AI活用</td></tr>
+              <tr><td>プロセス</td><td>Step 1 -> Step 2 -> Step 3</td><td>手順、授業展開、運用ルール</td></tr>
+              <tr><td>データ主役</td><td>グラフ + 読み取り + 示唆</td><td>調査結果、実績、行政説明</td></tr>
+              <tr><td>問いかけ</td><td>問い + 選択肢 + 考える視点</td><td>授業、研修ワーク、参加型説明</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="library-map">
+        <h2>媒体別の棚</h2>
+        <p>参考にしたBANNER LIBRARYのように、良い制作物は「カテゴリ」「テイスト」「形」「色」「媒体」で探せると強くなります。このガイドでは、さらに「目的」と「ワイヤーフレームの型」まで結びつけます。</p>
+        <div class="library-map">
+          <div class="library-chip"><strong>広告バナー</strong>直球訴求、課題共感、実績、期限、比較、プレゼント、人物写真、切り抜き、文字組み</div>
+          <div class="library-chip"><strong>スライド</strong>結論先出し、3根拠、Before/After、プロセス、比較、データ、ストーリー、問いかけ</div>
+          <div class="library-chip"><strong>LP</strong>ファーストビュー、課題、解決策、特徴、使い方、実績、FAQ、最終CTA</div>
+          <div class="library-chip"><strong>チラシ</strong>イベント、研修、募集、キャンペーン、行政案内、地域広報、申込導線</div>
+          <div class="library-chip"><strong>プリント</strong>問い、資料、作業欄、ヒント、発展、振り返り、先生向け注釈</div>
+          <div class="library-chip"><strong>図解</strong>フロー、マトリクス、ピラミッド、ベン図、中心放射、タイムライン、因果関係</div>
+        </div>
+        <div class="quote">探せる軸を持つと、AIへの依頼も強くなります。「おしゃれに」ではなく「教育・研修向け、ナチュラル、横長、人物なし、文字組み重視」のように指定できます。</div>
       </section>
 
       <section id="roles">
@@ -829,6 +1037,95 @@
         </div>
       </section>
 
+      <section id="gallery">
+        <h2>実例ギャラリー</h2>
+        <p>ワイヤーフレームと完成例を並べると、何を決めてから見た目に進むのかがわかります。ここでは広告バナー、スライド、プリント、LP、チラシ、図解の6種類を用意しました。</p>
+        <div class="example-gallery">
+          <article class="example-pair">
+            <div class="example-head">
+              <div><h3>広告バナー</h3><p>主文、補足、商品イメージ、CTAの優先順位を決めてから、色と素材感を入れる。</p></div>
+              <span class="tag green">1200 x 628</span>
+            </div>
+            <div class="asset-pair">
+              <figure class="asset-frame"><figcaption>Wireframe</figcaption><img src="assets/examples/ad-banner-wireframe.svg" alt="広告バナーのワイヤーフレーム"></figure>
+              <figure class="asset-frame"><figcaption>Finished</figcaption><img src="assets/examples/ad-banner-final.svg" alt="広告バナーの完成例"></figure>
+            </div>
+          </article>
+
+          <article class="example-pair">
+            <div class="example-head">
+              <div><h3>スライド</h3><p>1枚1メッセージ。タイトル、結論、3つの根拠、締めの一文を分ける。</p></div>
+              <span class="tag violet">16:9</span>
+            </div>
+            <div class="asset-pair">
+              <figure class="asset-frame"><figcaption>Wireframe</figcaption><img src="assets/examples/slide-wireframe.svg" alt="スライドのワイヤーフレーム"></figure>
+              <figure class="asset-frame"><figcaption>Finished</figcaption><img src="assets/examples/slide-final.svg" alt="スライドの完成例"></figure>
+            </div>
+          </article>
+
+          <article class="example-pair">
+            <div class="example-head">
+              <div><h3>プリント</h3><p>問い、資料、作業欄、振り返り欄を先に設計し、学習者の手が止まる場所を減らす。</p></div>
+              <span class="tag amber">A4</span>
+            </div>
+            <div class="asset-pair">
+              <figure class="asset-frame"><figcaption>Wireframe</figcaption><img src="assets/examples/worksheet-wireframe.svg" alt="プリントのワイヤーフレーム"></figure>
+              <figure class="asset-frame"><figcaption>Finished</figcaption><img src="assets/examples/worksheet-final.svg" alt="プリントの完成例"></figure>
+            </div>
+          </article>
+
+          <article class="example-pair">
+            <div class="example-head">
+              <div><h3>LP</h3><p>ファーストビュー、課題、解決策、特徴、CTAの流れを先に固定する。</p></div>
+              <span class="tag green">Web</span>
+            </div>
+            <div class="asset-pair">
+              <figure class="asset-frame"><figcaption>Wireframe</figcaption><img src="assets/examples/lp-wireframe.svg" alt="LPのワイヤーフレーム"></figure>
+              <figure class="asset-frame"><figcaption>Finished</figcaption><img src="assets/examples/lp-final.svg" alt="LPの完成例"></figure>
+            </div>
+          </article>
+
+          <article class="example-pair">
+            <div class="example-head">
+              <div><h3>チラシ</h3><p>イベントや研修は、対象、日時、得られること、申込導線を大きく整理する。</p></div>
+              <span class="tag amber">A4</span>
+            </div>
+            <div class="asset-pair">
+              <figure class="asset-frame"><figcaption>Wireframe</figcaption><img src="assets/examples/flyer-wireframe.svg" alt="チラシのワイヤーフレーム"></figure>
+              <figure class="asset-frame"><figcaption>Finished</figcaption><img src="assets/examples/flyer-final.svg" alt="チラシの完成例"></figure>
+            </div>
+          </article>
+
+          <article class="example-pair">
+            <div class="example-head">
+              <div><h3>図解</h3><p>中心テーマと周辺要素の関係を決め、矢印や余白で意味の違いを出す。</p></div>
+              <span class="tag violet">Diagram</span>
+            </div>
+            <div class="asset-pair">
+              <figure class="asset-frame"><figcaption>Wireframe</figcaption><img src="assets/examples/diagram-wireframe.svg" alt="図解のワイヤーフレーム"></figure>
+              <figure class="asset-frame"><figcaption>Finished</figcaption><img src="assets/examples/diagram-final.svg" alt="図解の完成例"></figure>
+            </div>
+          </article>
+        </div>
+
+        <h3>Image生成で作った参考ボード</h3>
+        <p>下の画像は、Image生成で作った「ワイヤーフレームから完成例へ」の参考ボードです。文字は正確に読ませず、構図、密度、余白、完成度の方向性を見るための素材として使います。</p>
+        <img class="generated-board" src="assets/generated/imagegen-design-board.png" alt="Image生成で作成したデザイン参考ボード">
+      </section>
+
+      <section id="anti-ai">
+        <h2>AIっぽく見せないための設計</h2>
+        <p>AIっぽさは、生成技術そのものよりも「誰に向けたものかが薄い」「言葉が抽象的」「余白と密度が全部同じ」「実物の制約がない」ことで出やすくなります。</p>
+        <div class="rule-list">
+          <div class="rule"><strong>相手を具体化する</strong>「先生」「行政職」だけでなく、何に困っている人かまで書く。</div>
+          <div class="rule"><strong>媒体の制約を書く</strong>A4、16:9、横長バナー、スマホファーストなど、作る場所を先に決める。</div>
+          <div class="rule"><strong>訴求ポイントを1つに絞る</strong>全部を大きくしない。主文、補足、CTAの順に強弱をつける。</div>
+          <div class="rule"><strong>実在感のある素材を使う</strong>写真枠、紙の質感、罫線、注釈、余白など、現場の手触りを足す。</div>
+          <div class="rule"><strong>アイコンを意味で使う</strong>飾りとして並べず、分類、手順、状態を助けるときだけ使う。</div>
+          <div class="rule"><strong>最後は人間が削る</strong>AIの案は多めに出る。採用前に、弱い言葉と不要な装飾を削る。</div>
+        </div>
+      </section>
+
       <section id="preparation">
         <h2>やっておくべき下準備</h2>
         <ul class="checklist">
@@ -907,47 +1204,133 @@
       </section>
 
       <section id="prompts">
-        <h2>AIに依頼するプロンプト</h2>
-        <p>AIに依頼するときは、目的、対象者、媒体、載せたい情報、避けたいことを渡します。</p>
-        <pre><code>あなたはUI/UXデザイナーです。
-次の条件で、初心者にもわかるワイヤーフレーム案を作成してください。
+        <h2>AIに依頼するプロンプト集</h2>
+        <p>プロンプトは、そのままコピーして使えます。最初にワイヤーフレームを作り、次に完成ビジュアルへ進む順番がおすすめです。</p>
+        <div class="prompt-grid">
+          <article class="prompt-card">
+            <div class="prompt-head"><h3>共通: ワイヤーフレーム作成</h3><button class="copy-button" type="button">Copy</button></div>
+            <pre><code>あなたはUI/UXデザイナーです。
+次の条件で、ローファイのワイヤーフレーム案を3つ作ってください。
 
-目的:
+媒体:
 対象者:
+目的:
 最終的にしてほしい行動:
 載せたい情報:
 避けたいこと:
-媒体:
 サイズ:
-トーン:
-
-出力してほしいもの:
-1. 情報の優先順位
-2. レイアウト構成
-3. テキストだけでわかるワイヤーフレーム
-4. 代替案を2つ
-5. 確認すべきチェックリスト</code></pre>
-
-        <h3>レビュー依頼用</h3>
-        <pre><code>以下のワイヤーフレームをレビューしてください。
-
-目的:
-対象者:
-ワイヤーフレーム:
-
-観点:
-1. 目的が伝わるか
-2. 情報の優先順位は適切か
-3. 導線は自然か
-4. 削れる情報はあるか
-5. 追加すべき状態や注釈はあるか
-6. 初心者にもわかるか
+参考にしたい雰囲気:
 
 出力:
-- 良い点
-- 問題点
-- 修正案
-- すぐ直すべき順番</code></pre>
+1. 情報の優先順位
+2. 3つの構成案
+3. テキストだけでわかるラフワイヤー
+4. それぞれの向き不向き
+5. 次に確認すべき質問</code></pre>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-head"><h3>広告バナー: 完成ビジュアル</h3><button class="copy-button" type="button">Copy</button></div>
+            <pre><code>広告バナーを制作してください。
+
+媒体:
+サイズ:
+ターゲット:
+主文:
+補足:
+CTA:
+商品・サービス:
+使いたい素材:
+避けたい表現:
+
+条件:
+- 1秒で主文が読める
+- 主文、補足、CTAの優先順位を明確にする
+- 余白、写真枠、質感、文字組みまで設計する
+- AIっぽい抽象アイコンだけに頼らない
+- 日本語テキストは正確に入れる。難しい場合は文字なし版を先に作る</code></pre>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-head"><h3>スライド: 1枚設計</h3><button class="copy-button" type="button">Copy</button></div>
+            <pre><code>次の内容を16:9スライド1枚にしてください。
+
+聞き手:
+この1枚で伝えたい結論:
+根拠:
+入れたい図解:
+口頭で補足する内容:
+次のスライドへのつなぎ:
+
+条件:
+- 1枚1メッセージ
+- タイトルは分類名ではなく主張にする
+- 文字を詰め込まず、視線の入口を作る
+- 図、数字、余白の役割を分ける
+- まずワイヤーフレーム、その後完成案を出す</code></pre>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-head"><h3>プリント: 教材設計</h3><button class="copy-button" type="button">Copy</button></div>
+            <pre><code>A4教材プリントのワイヤーフレームと完成案を作ってください。
+
+学年:
+教科:
+単元:
+今日の問い:
+使う資料:
+子どもが書く内容:
+支援が必要な子へのヒント:
+発展課題:
+
+条件:
+- 問い、資料、作業欄、振り返り欄を明確に分ける
+- 学習者の視線が上から下に自然に流れる
+- 書く欄の広さを思考量に合わせる
+- 先生の説明で補う部分と紙面で支える部分を分ける</code></pre>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-head"><h3>LP: サービスページ</h3><button class="copy-button" type="button">Copy</button></div>
+            <pre><code>次のサービスのLPワイヤーフレームを作ってください。
+
+サービス名:
+ターゲット:
+悩み:
+提供価値:
+証拠・実績:
+CTA:
+料金や導入条件:
+FAQ候補:
+
+構成:
+ファーストビュー / 課題 / 解決策 / 特徴 / 使い方 / 実績 / FAQ / 最終CTA
+
+条件:
+- スマホ表示時の順番も提案する
+- 途中離脱しそうな不安を先回りする
+- 最後に完成ビジュアル用プロンプトも作る</code></pre>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-head"><h3>図解: AIっぽさ回避</h3><button class="copy-button" type="button">Copy</button></div>
+            <pre><code>次のテーマを図解にしてください。
+
+テーマ:
+見る人:
+伝えたい関係性:
+要素:
+中心に置くもの:
+最後に残したい一文:
+
+条件:
+- フロー、マトリクス、中心放射の3案を出す
+- 矢印の意味を統一する
+- 抽象アイコンの羅列にしない
+- 現場の言葉、具体例、余白の強弱を入れる
+- 色がなくても関係がわかる構造にする</code></pre>
+          </article>
+        </div>
       </section>
 
       <section id="references">
@@ -961,13 +1344,14 @@
           <li><a href="https://www.nngroup.com/articles/wireflows/">Nielsen Norman Group: Wireflows</a></li>
           <li><a href="https://www.figma.com/resource-library/ui-design-principles/">Figma: UI design principles</a></li>
           <li><a href="https://www.smashingmagazine.com/2018/03/guide-wireframing-prototyping/">Smashing Magazine: Wireframing and Prototyping</a></li>
+          <li><a href="https://design-library.jp/">BANNER LIBRARY</a></li>
         </ul>
       </section>
     </main>
   </div>
 
   <footer class="footer">
-    <p>ワイヤーフレーム実践ガイド。作成日: 2026-05-08</p>
+    <p>ワイヤーフレーム実践ガイド。更新日: 2026-05-09</p>
   </footer>
 
   <script>
@@ -981,6 +1365,24 @@
         button.setAttribute("aria-selected", "true");
         const panel = document.getElementById(button.getAttribute("aria-controls"));
         if (panel) panel.classList.add("active");
+      });
+    });
+
+    document.querySelectorAll(".copy-button").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const card = button.closest(".prompt-card");
+        const code = card ? card.querySelector("code") : null;
+        if (!code) return;
+        try {
+          await navigator.clipboard.writeText(code.innerText);
+          const original = button.textContent;
+          button.textContent = "Copied";
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1200);
+        } catch (error) {
+          button.textContent = "Select text";
+        }
       });
     });
   </script>

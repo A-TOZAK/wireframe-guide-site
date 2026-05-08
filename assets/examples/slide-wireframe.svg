@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">スライドのワイヤーフレーム</title>
+  <desc id="desc">タイトル、結論、図、根拠の配置を示すスライドワイヤーフレーム。</desc>
+  <rect width="1280" height="720" fill="#f7f9fb"/>
+  <rect x="60" y="54" width="1160" height="612" rx="12" fill="#fff" stroke="#c8d2dc" stroke-width="3"/>
+  <rect x="112" y="102" width="680" height="48" rx="8" fill="#d9e1e8"/>
+  <rect x="112" y="176" width="480" height="28" rx="14" fill="#c7d1da"/>
+  <rect x="122" y="260" width="270" height="220" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-dasharray="12 10" stroke-width="3"/>
+  <rect x="504" y="260" width="270" height="220" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-dasharray="12 10" stroke-width="3"/>
+  <rect x="886" y="260" width="270" height="220" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-dasharray="12 10" stroke-width="3"/>
+  <path d="M400 370h86M782 370h86" stroke="#b8c4cf" stroke-width="8" stroke-linecap="round"/>
+  <rect x="112" y="548" width="760" height="24" rx="12" fill="#c7d1da"/>
+  <rect x="112" y="590" width="520" height="24" rx="12" fill="#d9e1e8"/>
+</svg>

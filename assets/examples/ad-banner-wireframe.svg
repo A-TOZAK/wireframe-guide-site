@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="628" viewBox="0 0 1200 628" role="img" aria-labelledby="title desc">
+  <title id="title">広告バナーのワイヤーフレーム</title>
+  <desc id="desc">広告バナーの配置設計。主文、画像、補足、CTAを灰色の枠で示す。</desc>
+  <rect width="1200" height="628" fill="#f6f8fa"/>
+  <rect x="42" y="42" width="1116" height="544" rx="20" fill="#fff" stroke="#c8d2dc" stroke-width="3"/>
+  <rect x="86" y="86" width="472" height="68" rx="8" fill="#d9e1e8"/>
+  <rect x="86" y="178" width="390" height="26" rx="13" fill="#c7d1da"/>
+  <rect x="86" y="222" width="330" height="26" rx="13" fill="#c7d1da"/>
+  <rect x="86" y="286" width="420" height="104" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-width="3" stroke-dasharray="12 10"/>
+  <rect x="86" y="436" width="232" height="58" rx="29" fill="#c7d1da"/>
+  <rect x="650" y="104" width="396" height="338" rx="22" fill="#eef2f5" stroke="#b8c4cf" stroke-width="3" stroke-dasharray="12 10"/>
+  <circle cx="818" cy="254" r="70" fill="#d9e1e8"/>
+  <rect x="690" y="472" width="318" height="28" rx="14" fill="#d9e1e8"/>
+  <text x="86" y="538" fill="#65717d" font-family="sans-serif" font-size="28" font-weight="700">Wireframe: 主文 / 補足 / 商品イメージ / CTA</text>
+</svg>

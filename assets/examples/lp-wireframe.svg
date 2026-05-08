@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">LPのワイヤーフレーム</title>
+  <desc id="desc">ファーストビュー、課題、特徴、CTAで構成するLPワイヤーフレーム。</desc>
+  <rect width="1200" height="900" fill="#f7f9fb"/>
+  <rect x="56" y="42" width="1088" height="74" rx="12" fill="#fff" stroke="#c8d2dc"/>
+  <rect x="90" y="68" width="180" height="24" rx="12" fill="#d9e1e8"/>
+  <rect x="810" y="66" width="250" height="28" rx="14" fill="#d9e1e8"/>
+  <rect x="56" y="150" width="1088" height="280" rx="18" fill="#fff" stroke="#c8d2dc"/>
+  <rect x="96" y="200" width="440" height="48" rx="8" fill="#d9e1e8"/>
+  <rect x="96" y="276" width="360" height="24" rx="12" fill="#c7d1da"/>
+  <rect x="96" y="320" width="240" height="54" rx="27" fill="#c7d1da"/>
+  <rect x="668" y="190" width="360" height="190" rx="14" fill="#eef2f5" stroke="#b8c4cf" stroke-dasharray="12 10" stroke-width="3"/>
+  <rect x="56" y="468" width="1088" height="148" rx="18" fill="#fff" stroke="#c8d2dc"/>
+  <rect x="96" y="510" width="260" height="30" rx="15" fill="#d9e1e8"/>
+  <rect x="96" y="560" width="940" height="20" rx="10" fill="#c7d1da"/>
+  <rect x="56" y="654" width="1088" height="188" rx="18" fill="#fff" stroke="#c8d2dc"/>
+  <rect x="96" y="702" width="292" height="92" rx="12" fill="#eef2f5"/>
+  <rect x="454" y="702" width="292" height="92" rx="12" fill="#eef2f5"/>
+  <rect x="812" y="702" width="292" height="92" rx="12" fill="#eef2f5"/>
+</svg>
