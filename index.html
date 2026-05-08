@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ワイヤーフレーム実践ガイド</title>
+  <meta name="description" content="図解、スライド、Web、アプリ、バナー、教材制作に使えるワイヤーフレーム実践ガイド。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #182026;
+      --muted: #58636f;
+      --soft: #eef2f5;
+      --line: #d7dee5;
+      --paper: #ffffff;
+      --wash: #f7f9fb;
+      --blue: #1d5f8f;
+      --green: #2f6b4f;
+      --rose: #a9435b;
+      --amber: #8b6418;
+      --violet: #6652a3;
+      --teal: #1d6f78;
+      --shadow: 0 18px 40px rgba(24, 32, 38, 0.08);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--wash);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Segoe UI", sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .site-header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 20px 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.35rem;
+      max-width: 12em;
+    }
+
+    .lead {
+      max-width: 45em;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-panel {
+      background: #f1f5f7;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .wire-visual {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .wire-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .wire-block {
+      min-height: 34px;
+      border: 1px solid #bcc8d2;
+      background: #f8fafb;
+      border-radius: 6px;
+    }
+
+    .wire-block.dark {
+      background: #dce6ec;
+    }
+
+    .wire-block.tall {
+      min-height: 92px;
+    }
+
+    .wire-lines {
+      display: grid;
+      gap: 8px;
+    }
+
+    .wire-line {
+      height: 10px;
+      width: 100%;
+      background: #dce4ea;
+      border-radius: 99px;
+    }
+
+    .wire-line.short {
+      width: 62%;
+    }
+
+    .hero-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .layout {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 20px 56px;
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .side-nav {
+      position: sticky;
+      top: 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .side-nav strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+    }
+
+    .side-nav a {
+      display: block;
+      padding: 7px 8px;
+      border-radius: 6px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    .side-nav a:hover,
+    .side-nav a:focus {
+      background: var(--soft);
+      outline: none;
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    section > h2 {
+      margin: 0 0 12px;
+      font-size: 1.65rem;
+    }
+
+    section > p:first-of-type {
+      margin-top: 0;
+    }
+
+    h3 {
+      margin: 26px 0 10px;
+      font-size: 1.18rem;
+    }
+
+    h4 {
+      margin: 18px 0 8px;
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: #fbfcfd;
+    }
+
+    .card h3,
+    .card h4 {
+      margin-top: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e7edf2;
+      color: #33404d;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .tag.green {
+      background: #e2f0e8;
+      color: var(--green);
+    }
+
+    .tag.rose {
+      background: #f5e4e8;
+      color: var(--rose);
+    }
+
+    .tag.amber {
+      background: #f3ead2;
+      color: var(--amber);
+    }
+
+    .tag.violet {
+      background: #e9e5f6;
+      color: var(--violet);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      min-height: 132px;
+      background: #fbfcfd;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .role-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .role-button {
+      border: 1px solid var(--line);
+      background: #fbfcfd;
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+    }
+
+    .role-button[aria-selected="true"] {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .role-panel {
+      display: none;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: #fbfcfd;
+    }
+
+    .role-panel.active {
+      display: block;
+    }
+
+    .role-panel h3 {
+      margin-top: 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 680px;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f7;
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .example {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .fail {
+      border-left: 4px solid var(--rose);
+    }
+
+    .success {
+      border-left: 4px solid var(--green);
+    }
+
+    .checklist {
+      columns: 2;
+      column-gap: 28px;
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .checklist li {
+      break-inside: avoid;
+      margin-bottom: 8px;
+    }
+
+    .pattern-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-wire {
+      display: grid;
+      gap: 6px;
+      min-height: 118px;
+      padding: 12px;
+      background: #f7fafb;
+      border: 1px dashed #aab8c5;
+      border-radius: 6px;
+    }
+
+    .mini-wire .bar,
+    .mini-wire .box {
+      background: #d8e2e9;
+      border-radius: 4px;
+      min-height: 12px;
+    }
+
+    .mini-wire .box {
+      min-height: 38px;
+    }
+
+    .mini-wire .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .quote {
+      border-left: 4px solid var(--teal);
+      padding: 12px 14px;
+      background: #edf6f7;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 14px 0;
+    }
+
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      background: #172027;
+      color: #edf6f7;
+      padding: 16px;
+      border-radius: var(--radius);
+      line-height: 1.7;
+      font-size: 0.92rem;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px 44px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      .header-inner,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-nav {
+        position: static;
+      }
+
+      .flow,
+      .pattern-gallery,
+      .grid.three {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        padding: 22px 16px;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      .layout {
+        padding: 16px 12px 36px;
+      }
+
+      section {
+        padding: 20px 16px;
+      }
+
+      .flow,
+      .grid.two,
+      .grid.three,
+      .example,
+      .pattern-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .checklist {
+        columns: 1;
+      }
+
+      .wire-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <p class="eyebrow">Wireframe Practice Guide</p>
+        <h1>ワイヤーフレーム実践ガイド</h1>
+        <p class="lead">図解、スライド、Web、アプリ、広告バナー、教材づくりの前に、情報の順番と見る人の動きを整えるための実務ガイドです。</p>
+      </div>
+      <div class="hero-panel" aria-label="ワイヤーフレームの例">
+        <div class="wire-visual">
+          <div class="wire-block dark"></div>
+          <div class="wire-row">
+            <div class="wire-block tall"></div>
+            <div class="wire-lines">
+              <div class="wire-line"></div>
+              <div class="wire-line"></div>
+              <div class="wire-line short"></div>
+              <div class="wire-block"></div>
+            </div>
+          </div>
+          <div class="wire-row">
+            <div class="wire-block"></div>
+            <div class="wire-block"></div>
+          </div>
+        </div>
+        <p class="hero-note">最初に作るべきものは、きれいな完成図ではなく、判断しやすい設計図です。</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="side-nav" aria-label="ページ内ナビゲーション">
+      <strong>目次</strong>
+      <a href="#basic">基本</a>
+      <a href="#process">作り方</a>
+      <a href="#roles">職種別の使い方</a>
+      <a href="#patterns">型の一覧</a>
+      <a href="#examples">失敗例と成功例</a>
+      <a href="#preparation">下準備</a>
+      <a href="#cautions">注意点</a>
+      <a href="#human-ai">人間とAIの分担</a>
+      <a href="#checklist">チェックリスト</a>
+      <a href="#prompts">AIプロンプト</a>
+      <a href="#references">参考資料</a>
+    </nav>
+
+    <main>
+      <section id="basic">
+        <h2>基本</h2>
+        <p>ワイヤーフレームは、色や装飾の前に「何を、どこに、どの順番で置くか」を決める設計図です。Webやアプリだけでなく、スライド、図解、バナー、教材にも使えます。</p>
+        <div class="grid three">
+          <div class="card">
+            <span class="tag green">目的</span>
+            <h3>何のために作るか</h3>
+            <p>誰に何を理解してもらい、どんな判断や行動につなげたいのかを1文で決めます。</p>
+          </div>
+          <div class="card">
+            <span class="tag amber">構造</span>
+            <h3>情報の順番を決める</h3>
+            <p>重要な情報、補足、根拠、行動ボタンを並べ、見る人が迷わない流れにします。</p>
+          </div>
+          <div class="card">
+            <span class="tag violet">検証</span>
+            <h3>早く見せて直す</h3>
+            <p>完成してから直すより、箱と線の段階で違和感を見つける方が速く、負担も軽くなります。</p>
+          </div>
+        </div>
+        <div class="quote">合言葉は「きれいにする前に、わかるようにする」。見た目の好き嫌いより先に、目的、導線、情報量を確認します。</div>
+      </section>
+
+      <section id="process">
+        <h2>作り方</h2>
+        <p>いきなり四角を並べると迷います。次の5段階にすると、初心者でも作りやすくなります。</p>
+        <div class="flow">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>目的</h3>
+            <p>誰に、何を、どうしてほしいかを1文で書く。</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>材料</h3>
+            <p>載せたい情報を全部出し、必須と任意に分ける。</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>順番</h3>
+            <p>最初に見るもの、納得する材料、最後の行動を並べる。</p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h3>ラフ</h3>
+            <p>ローファイで3案作る。最初から1案に絞らない。</p>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <h3>確認</h3>
+            <p>目的、視線、導線、状態、抜け漏れをチェックする。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="roles">
+        <h2>職種別の使い方</h2>
+        <p>同じワイヤーフレームでも、使う人によって効きどころが変わります。下のボタンで切り替えてください。</p>
+
+        <div class="role-controls" role="tablist" aria-label="職種別ガイド">
+          <button class="role-button" role="tab" aria-selected="true" aria-controls="role-teacher" id="tab-teacher">小学校教員</button>
+          <button class="role-button" role="tab" aria-selected="false" aria-controls="role-gov" id="tab-gov">行政職</button>
+          <button class="role-button" role="tab" aria-selected="false" aria-controls="role-designer" id="tab-designer">デザイナー</button>
+          <button class="role-button" role="tab" aria-selected="false" aria-controls="role-engineer" id="tab-engineer">Webエンジニア</button>
+          <button class="role-button" role="tab" aria-selected="false" aria-controls="role-owner" id="tab-owner">個人事業主</button>
+          <button class="role-button" role="tab" aria-selected="false" aria-controls="role-creator" id="tab-creator">教材製作者</button>
+        </div>
+
+        <article class="role-panel active" role="tabpanel" id="role-teacher" aria-labelledby="tab-teacher">
+          <h3>小学校教員向け</h3>
+          <p>授業プリント、スライド、校内研修資料、保護者向け文書に効きます。授業では「子どもがどこを見て、何を考え、どこに書くか」を先に設計します。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>場面</th><th>ワイヤーフレームで決めること</th><th>効果</th></tr></thead>
+              <tbody>
+                <tr><td>授業スライド</td><td>問い、資料、考える視点、共有の順番</td><td>説明が長くならず、子どもの視線が迷いにくい</td></tr>
+                <tr><td>ワークシート</td><td>資料欄、作業欄、支援ヒント、振り返り欄</td><td>学力差があっても取り組み始めやすい</td></tr>
+                <tr><td>校内研修</td><td>問題提起、実例、体験、明日やること</td><td>聞いて終わりではなく、実践につながる</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="role-panel" role="tabpanel" id="role-gov" aria-labelledby="tab-gov">
+          <h3>行政職向け</h3>
+          <p>住民向けページ、申請フォーム、案内チラシ、庁内説明資料に効きます。行政文書では「制度として正しい」だけでなく「住民が迷わず行動できる」構造が重要です。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>場面</th><th>ワイヤーフレームで決めること</th><th>効果</th></tr></thead>
+              <tbody>
+                <tr><td>申請ページ</td><td>対象者、必要書類、期限、手順、問い合わせ</td><td>電話問い合わせや差し戻しを減らせる</td></tr>
+                <tr><td>チラシ</td><td>誰向け、何が変わる、いつまで、どこへ行く</td><td>読む前に捨てられにくくなる</td></tr>
+                <tr><td>庁内説明</td><td>背景、論点、選択肢、判断材料、依頼事項</td><td>合意形成が速くなる</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="role-panel" role="tabpanel" id="role-designer" aria-labelledby="tab-designer">
+          <h3>デザイナー向け</h3>
+          <p>ワイヤーフレームは、見た目を弱める工程ではなく、デザイン判断の土台を固める工程です。色やフォントに入る前に、情報設計とインタラクションの筋を通します。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>場面</th><th>ワイヤーフレームで決めること</th><th>効果</th></tr></thead>
+              <tbody>
+                <tr><td>LP</td><td>訴求順、信頼材料、CTA、離脱ポイント</td><td>見た目の前にコンバージョンの骨格を検証できる</td></tr>
+                <tr><td>アプリ</td><td>主要操作、状態、エラー、空状態</td><td>UIコンポーネントの抜け漏れを減らせる</td></tr>
+                <tr><td>ブランド展開</td><td>同じ構造で媒体違いに展開する方法</td><td>統一感と制作速度が上がる</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="role-panel" role="tabpanel" id="role-engineer" aria-labelledby="tab-engineer">
+          <h3>フリーランスのWebエンジニア向け</h3>
+          <p>受託開発では、ワイヤーフレームが仕様のすり合わせになります。実装前に画面、状態、入力、エラー、レスポンシブを確認できると、手戻りが大きく減ります。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>場面</th><th>ワイヤーフレームで決めること</th><th>効果</th></tr></thead>
+              <tbody>
+                <tr><td>見積もり前</td><td>ページ数、機能、フォーム、状態数</td><td>見積もりの根拠が明確になる</td></tr>
+                <tr><td>実装前</td><td>画面遷移、APIが必要な箇所、エラー</td><td>実装中の仕様確認が減る</td></tr>
+                <tr><td>納品前</td><td>受け入れ条件、表示崩れ、操作フロー</td><td>検収がスムーズになる</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="role-panel" role="tabpanel" id="role-owner" aria-labelledby="tab-owner">
+          <h3>個人事業主向け</h3>
+          <p>自分の商品やサービスを説明するときは、言いたいことが増えがちです。ワイヤーフレームを作ると、見込み客が知りたい順番に並べ直せます。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>場面</th><th>ワイヤーフレームで決めること</th><th>効果</th></tr></thead>
+              <tbody>
+                <tr><td>サービスページ</td><td>誰向け、悩み、提供内容、料金、申込</td><td>自分語りではなく顧客目線になる</td></tr>
+                <tr><td>SNS告知</td><td>最初の一文、証拠、行動導線</td><td>投稿の反応が検証しやすい</td></tr>
+                <tr><td>営業資料</td><td>課題、解決策、事例、次の相談</td><td>商談で話す順番が整う</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="role-panel" role="tabpanel" id="role-creator" aria-labelledby="tab-creator">
+          <h3>教材製作者向け</h3>
+          <p>教材は「情報を載せる紙面」ではなく「学習者の思考を進める画面」です。ワイヤーフレームでは、問い、資料、作業、支援、振り返りの順番を設計します。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>場面</th><th>ワイヤーフレームで決めること</th><th>効果</th></tr></thead>
+              <tbody>
+                <tr><td>プリント</td><td>問い、資料、記入欄、ヒント、発展</td><td>子どもが一人でも取り組み始めやすい</td></tr>
+                <tr><td>教材販売ページ</td><td>対象学年、使う場面、中身、導入手順</td><td>購入前の不安を減らせる</td></tr>
+                <tr><td>テンプレート</td><td>再利用する枠、差し替える枠、注意書き</td><td>シリーズ化しやすくなる</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section id="patterns">
+        <h2>型の一覧</h2>
+        <p>白紙から考えず、目的に合う型を選びます。型は発想を縛るものではなく、迷いを減らすための足場です。</p>
+        <div class="pattern-gallery">
+          <div class="card">
+            <h3>ヒーロー型</h3>
+            <div class="mini-wire">
+              <div class="bar"></div>
+              <div class="box"></div>
+              <div class="bar"></div>
+              <div class="bar" style="width: 56%;"></div>
+            </div>
+            <p>LP、バナー、告知に。最初の主張とCTAを強く出します。</p>
+          </div>
+          <div class="card">
+            <h3>カードグリッド型</h3>
+            <div class="mini-wire">
+              <div class="bar"></div>
+              <div class="row"><div class="box"></div><div class="box"></div></div>
+              <div class="row"><div class="box"></div><div class="box"></div></div>
+            </div>
+            <p>一覧、機能紹介、教材一覧に。カード内の順番を揃えます。</p>
+          </div>
+          <div class="card">
+            <h3>ステップ型</h3>
+            <div class="mini-wire">
+              <div class="bar"></div>
+              <div class="row"><div class="box"></div><div class="box"></div></div>
+              <div class="row"><div class="box"></div><div class="box"></div></div>
+            </div>
+            <p>手順、授業展開、登録フローに。粒度を揃えるのがコツです。</p>
+          </div>
+          <div class="card">
+            <h3>Before / After型</h3>
+            <div class="mini-wire">
+              <div class="row"><div class="bar"></div><div class="bar"></div></div>
+              <div class="row"><div class="box"></div><div class="box"></div></div>
+              <div class="bar" style="width: 68%;"></div>
+            </div>
+            <p>改善事例、業務改善、教材の価値説明に向いています。</p>
+          </div>
+          <div class="card">
+            <h3>フォーム型</h3>
+            <div class="mini-wire">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="box"></div>
+            </div>
+            <p>申請、問い合わせ、アンケートに。エラー状態も必ず考えます。</p>
+          </div>
+          <div class="card">
+            <h3>ダッシュボード型</h3>
+            <div class="mini-wire">
+              <div class="row"><div class="bar"></div><div class="bar"></div></div>
+              <div class="row"><div class="box"></div><div class="box"></div></div>
+              <div class="box"></div>
+            </div>
+            <p>管理画面、分析画面に。何を見て判断する画面かを先に決めます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="examples">
+        <h2>よくある失敗例と成功例</h2>
+        <div class="example">
+          <div class="card fail">
+            <span class="tag rose">失敗例</span>
+            <h3>最初から色と装飾に入る</h3>
+            <p>見た目の好き嫌いで議論が始まり、情報の順番や導線の問題が隠れます。</p>
+          </div>
+          <div class="card success">
+            <span class="tag green">成功例</span>
+            <h3>まずグレーで構造を確認する</h3>
+            <p>目的、視線、CTA、情報量に集中でき、修正も速くなります。</p>
+          </div>
+        </div>
+        <div class="example">
+          <div class="card fail">
+            <span class="tag rose">失敗例</span>
+            <h3>1案だけ作って確認する</h3>
+            <p>比較できないため、相手も「なんとなく違う」としか言えません。</p>
+          </div>
+          <div class="card success">
+            <span class="tag green">成功例</span>
+            <h3>ローファイで3案出す</h3>
+            <p>結論先出し、課題共感、比較訴求など、考え方の違いを選べます。</p>
+          </div>
+        </div>
+        <div class="example">
+          <div class="card fail">
+            <span class="tag rose">失敗例</span>
+            <h3>標準状態だけ作る</h3>
+            <p>データがない、失敗した、権限がない、読み込み中などで実装時に詰まります。</p>
+          </div>
+          <div class="card success">
+            <span class="tag green">成功例</span>
+            <h3>状態を先にメモする</h3>
+            <p>通常、空、エラー、成功、読み込み中を最低限考えておきます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="preparation">
+        <h2>やっておくべき下準備</h2>
+        <ul class="checklist">
+          <li>対象者を1種類に絞る</li>
+          <li>相手の困りごとを3つ書く</li>
+          <li>最終的にしてほしい行動を1つ決める</li>
+          <li>載せたい情報を全部出す</li>
+          <li>Must、Should、Couldに分ける</li>
+          <li>参考にしたい既存事例を3つ集める</li>
+          <li>画面サイズや紙面サイズを決める</li>
+          <li>確認してほしい相手を決める</li>
+          <li>使ってよい素材と使えない素材を分ける</li>
+          <li>納期と修正回数を決める</li>
+        </ul>
+      </section>
+
+      <section id="cautions">
+        <h2>気をつけるべき点</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>情報を足しすぎない</h3>
+            <p>ワイヤーフレームは、足す作業より削る作業が大切です。目的に関係しない情報は、別ページや補足に逃がします。</p>
+          </div>
+          <div class="card">
+            <h3>言葉を仮にしすぎない</h3>
+            <p>見出し、ボタン、教材の問いは、構造そのものに影響します。重要な言葉だけは早めに実文に近づけます。</p>
+          </div>
+          <div class="card">
+            <h3>スマホ表示を後回しにしない</h3>
+            <p>Webや申請フォームはスマホ閲覧が多い前提で、上下に積んだときの順番を確認します。</p>
+          </div>
+          <div class="card">
+            <h3>確認質問を具体化する</h3>
+            <p>「どうですか？」ではなく、「最初にどこを見ましたか」「次に何を押すと思いますか」と聞きます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="human-ai">
+        <h2>人間と生成AIの分担</h2>
+        <p>生成AIは強力ですが、全部を任せると「もっともらしいけれど、相手に合っていない構成」になりがちです。人間が判断するところと、AIに広げてもらうところを分けます。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>工程</th><th>人間が手を動かすこと</th><th>生成AIに任せやすいこと</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>目的設定</td><td>誰に何をしてほしいかを決める</td><td>目的文の言い換え、ターゲット別の観点出し</td></tr>
+              <tr><td>情報整理</td><td>本当に必要な情報を選ぶ</td><td>情報の分類、抜け漏れ候補の提案</td></tr>
+              <tr><td>構成案</td><td>最終的に採用する流れを決める</td><td>3案の構成、型の提案、比較表作成</td></tr>
+              <tr><td>コピー</td><td>自分の実感、顧客の言葉、専門的正確性を入れる</td><td>見出し案、CTA案、短文化、トーン調整</td></tr>
+              <tr><td>レビュー</td><td>現場感、倫理、実現可能性を判断する</td><td>チェックリスト照合、失敗パターンの指摘</td></tr>
+              <tr><td>実装・制作</td><td>最終確認、公開判断、関係者調整</td><td>HTML下書き、CSS案、プロンプト化、表の整形</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="quote">AIには「案を広げる」「抜けを探す」「言葉を整える」を任せ、人間は「誰のためか」「何を削るか」「これで本当に助かるか」を判断します。</div>
+      </section>
+
+      <section id="checklist">
+        <h2>レビュー用チェックリスト</h2>
+        <ul class="checklist">
+          <li>目的を1文で説明できる</li>
+          <li>一番重要な情報が一目でわかる</li>
+          <li>見る順番が自然</li>
+          <li>次の行動が明確</li>
+          <li>CTAの文言が具体的</li>
+          <li>情報量が多すぎない</li>
+          <li>似た部品は同じ形になっている</li>
+          <li>空状態やエラー状態を考えている</li>
+          <li>スマホや小さい紙面でも成立する</li>
+          <li>色がなくても意味が伝わる</li>
+          <li>現場の言葉になっている</li>
+          <li>作る人が次の作業に移れる</li>
+        </ul>
+      </section>
+
+      <section id="prompts">
+        <h2>AIに依頼するプロンプト</h2>
+        <p>AIに依頼するときは、目的、対象者、媒体、載せたい情報、避けたいことを渡します。</p>
+        <pre><code>あなたはUI/UXデザイナーです。
+次の条件で、初心者にもわかるワイヤーフレーム案を作成してください。
+
+目的:
+対象者:
+最終的にしてほしい行動:
+載せたい情報:
+避けたいこと:
+媒体:
+サイズ:
+トーン:
+
+出力してほしいもの:
+1. 情報の優先順位
+2. レイアウト構成
+3. テキストだけでわかるワイヤーフレーム
+4. 代替案を2つ
+5. 確認すべきチェックリスト</code></pre>
+
+        <h3>レビュー依頼用</h3>
+        <pre><code>以下のワイヤーフレームをレビューしてください。
+
+目的:
+対象者:
+ワイヤーフレーム:
+
+観点:
+1. 目的が伝わるか
+2. 情報の優先順位は適切か
+3. 導線は自然か
+4. 削れる情報はあるか
+5. 追加すべき状態や注釈はあるか
+6. 初心者にもわかるか
+
+出力:
+- 良い点
+- 問題点
+- 修正案
+- すぐ直すべき順番</code></pre>
+      </section>
+
+      <section id="references">
+        <h2>参考資料</h2>
+        <p>このガイドは、以下の資料を参考にしつつ、初心者がすぐ使えるように再構成しています。</p>
+        <ul>
+          <li><a href="https://www.figma.com/resource-library/what-is-wireframing/">Figma: What is wireframing?</a></li>
+          <li><a href="https://www.figma.com/blog/how-to-wireframe/">Figma Blog: How to wireframe</a></li>
+          <li><a href="https://usability.yale.edu/ux/build/design-documentation/wireframes">Yale Usability &amp; Digital Accessibility: Wireframes</a></li>
+          <li><a href="https://www.nngroup.com/articles/ux-deliverables-glossary/">Nielsen Norman Group: UX Deliverables Glossary</a></li>
+          <li><a href="https://www.nngroup.com/articles/wireflows/">Nielsen Norman Group: Wireflows</a></li>
+          <li><a href="https://www.figma.com/resource-library/ui-design-principles/">Figma: UI design principles</a></li>
+          <li><a href="https://www.smashingmagazine.com/2018/03/guide-wireframing-prototyping/">Smashing Magazine: Wireframing and Prototyping</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>ワイヤーフレーム実践ガイド。作成日: 2026-05-08</p>
+  </footer>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll(".role-button"));
+    const panels = Array.from(document.querySelectorAll(".role-panel"));
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((item) => item.setAttribute("aria-selected", "false"));
+        panels.forEach((panel) => panel.classList.remove("active"));
+        button.setAttribute("aria-selected", "true");
+        const panel = document.getElementById(button.getAttribute("aria-controls"));
+        if (panel) panel.classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
